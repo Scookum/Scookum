@@ -5,4 +5,6 @@ The goal of this project is to produce a multi purpose monitoring system which i
 * Easy to install.
 * Easy to extend.
 
+![diagram](https://github.com/Scookum/Scookum/blob/master/SystemDiagram.png)
+
 This project has just begun, sorry, there is no contents now...  
