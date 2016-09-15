@@ -8,3 +8,5 @@ The goal of this project is to produce a multi purpose monitoring system which i
 ![diagram](https://github.com/Scookum/Scookum/blob/master/SystemDiagram.png)
 
 This project has just begun, sorry, there is no contents now...  
+
+Now we are building specifications on the [Wiki pages](https://github.com/Scookum/scookum/wiki/Monitoring-job-specification(DRAFT))  
