@@ -1,0 +1,30 @@
+###
+# A sample of simple syntax
+#
+syntax:
+  - 
+    vmstat:
+      - HEADER1 HEADER2 data
+      - vmstat data
+      - vmstat header1 header2 data
+    HEADER1: [ \t]*[A-Za-z].*\-'\n'
+    HEADER2: [ \t]*[A-Za-z].*[A-Za-z]'\n'
+    data: r b swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st '\n'
+    IV: [0-9]+
+    r: IV
+    b: IV
+    swpd: IV
+    free: IV
+    buff: IV
+    cache: IV
+    si: IV
+    so: IV
+    bi: IV
+    bo: IV
+    in: IV
+    cs: IV
+    us: IV
+    sy: IV
+    id: IV
+    wa: IV
+    st: IV

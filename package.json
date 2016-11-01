@@ -1,0 +1,23 @@
+{
+  "name": "scookum",
+  "version": "1.0.0",
+  "description": "The word \"Scookum\" is not exist in the world, it is a typo of \"Skookum\".   The goal of this project is to produce a multi purpose monitoring system which is:   * Light weight. * Easy to install. * Easy to extend.",
+  "main": ".#syntaxconvert.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Scookum/scookum.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Scookum/scookum/issues"
+  },
+  "homepage": "https://github.com/Scookum/scookum#readme",
+  "dependencies": {
+    "jison-semi-passive": "^0.1.0",
+    "js-yaml": "^3.6.1"
+  }
+}
