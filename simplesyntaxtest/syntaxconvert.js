@@ -16,3 +16,4 @@ var fs = require('fs');
 
 var doc = yaml.safeLoad(fs.readFileSync('./simplesyntax.yaml', 'utf8'));
 
+console.log(doc);
