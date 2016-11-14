@@ -1,7 +1,7 @@
 //
-angular.module('login', []).controller('loginController', LoginCtrl);
+angular.module('main', []).controller('mainController', MainCtrl);
 
-function LoginCtrl($scope) {
+function MainCtrl($scope) {
   $scope.submit = function() {
     console.log('submit:' + $scope.userName + ":" + $scope.password);
   };

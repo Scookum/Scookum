@@ -1,16 +1,19 @@
-doctype html
-html
-  head
-    title Scookum Web
-    meta(charset="utf-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1")
-    link(href="css/bootstrap.min.css" rel="stylesheet")
-    link(href="css/style.css", rel="stylesheet")
-    script(src="js/jquery-3.1.1.min.js")
-    script(src="js/bootstrap.min.js")
-  body
-    header
-    div.container
-      div.row
-        div.col-sm-6 Hello pug world!
+extends layout.pug
+
+block datablock
+  - var title = "Scookum web";
+  - var header = "Scookum Web Admin";
+  - var appName = "main";
+
+block header
+  h1= title
+
+block append scripts
+  script(src="js/mainController.js")
+  
+block contents
+  div.row(ng-controller="mainController")
+    div.col-md-6 Hello pug world! #{appName}
+      div= appName
+    
 

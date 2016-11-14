@@ -1,0 +1,14 @@
+.color-sub {
+  color: #f00;
+}
+.color-specific {
+  color: #008000;
+}
+.color-main {
+  font-size: 40px;
+  border-style: solid;
+  color: #00f;
+}
+.col-sm-6 {
+  width: 45%;
+}
