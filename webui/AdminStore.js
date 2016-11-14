@@ -17,11 +17,10 @@ var AdminStore = function AdminStore (host, port, handler) {
     if (err) {
       // throw err;
       console.log(err);
-    } else {
-      this.db = db;
-      if (handler) {
-	handler(err, db);
-      }
+    }
+    this.db = db;
+    if (handler) {
+      handler(err, db);
     }
   });
 }; 

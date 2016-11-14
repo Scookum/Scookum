@@ -1,17 +1,23 @@
 //
 
+var path = require('path');
 var express = require('express');
 var bodyparser = require('body-parser');
+var cookieParser = require('cookie-parser');
 
 var app = express();
-app.use(bodyparser.json());
 
 var mongohost = 'localhost';
 var mongoport = 27017;
 
 function startServer(handler) {
   
-  app.use(express.static('public'));
+  app.use(bodyparser.json());
+  app.use(cookieParser());
+  app.use(express.static(path.join(__dirname, 'public')));
+  app.set('views', path.join(__dirname, 'views'));
+  app.set('view engine', 'pug');
+  app.use(require('stylus').middleware({ src: path.join(__dirname, 'public') }));
   
   var api = require('./api');
   api(app);
