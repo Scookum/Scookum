@@ -1,0 +1,33 @@
+doctype html
+html(ng-app=appName)
+  head
+    title
+      block title
+        | Scookum Web
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    block styles
+      link(href="css/bootstrap.min.css" rel="stylesheet")
+      link(href="css/style.css", rel="stylesheet")
+    block scripts
+      script(src="js/jquery-3.1.1.min.js")
+      script(src="js/bootstrap.min.js")
+      script(src="amcharts/amcharts.js")
+      script(src="amcharts/serial.js")
+      script(src="amcharts/plugins/export/export.min.js")
+      script(src="amcharts/themes/light.js")
+    body
+      header.container
+        div.row
+          block header
+            | Scookum Web
+      nav
+        block nav
+      aside
+        block aside
+      div.container
+        block contents
+          div#chartdiv(style={width:"640px", height: "480px"})
+      footer
+      script(src="js/index2.js")
+
