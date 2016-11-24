@@ -9,13 +9,13 @@ block header
   h1= title
 
 block append styles
-  link(rel="stylesheet", href="amcharts/plugins/export/export.css")
+  link(rel="stylesheet" href="components/amcharts3/amcharts/plugins/export/export.css")
 
 block append scripts
-  script(src="amcharts/amcharts.js")
-  script(src="amcharts/serial.js")
-  script(src="amcharts/plugins/export/export.min.js")
-  script(src="amcharts/themes/light.js")
+  script(src="components/amcharts3/amcharts/amcharts.js")
+  script(src="components/amcharts3/amcharts/serial.js")
+  script(src="components/amcharts3/amcharts/plugins/export/export.min.js")
+  script(src="components/amcharts3/amcharts/themes/light.js")
   script(src="js/chartOptions.js")
   script(src="js/mainController.js")
   
@@ -24,6 +24,17 @@ block contents
     div.col-md-6
       div
         form
-          select.form-control(ng-model="chart", ng-change="onChartSelect()")
-            option(ng-repeat="chart in charts") {{chart}}
+          div
+            span(ng-repeat="host in hosts")
+              input.br-green.hidden(type="radio" id="chart-{{host}}" name="hostselect" value="{{host}}" ng-model="chartHost")
+              label.btn.btn-default.radio-inline(for="chart-{{host}}") {{host}}
+          div
+            span(ng-repeat="chart in charts")
+              input.br-green.hidden(type="radio" id="chart-{{chart}}" name="chartselect" value="{{chart}}" ng-model="chartSource")
+              label.btn.btn-default.radio-inline(for="chart-{{chart}}") {{chart}}
+          //each chart in chartlist
+          //  input.hidden(id=chart type="radio" name="chartselect" value=chart)
+          //  label.btn.btn-default.radio-inline(for=chart)= chart
+          //select.form-control(ng-model="chart", ng-change="onChartSelect()")
+            //option(ng-repeat="chart in charts") {{chart}}
       div#chartdiv(style={width:"640px", height: "480px"})

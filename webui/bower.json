@@ -1,0 +1,22 @@
+{
+  "name": "scookum",
+  "description": "The word \"Scookum\" is not exist in the world, it is a typo of \"Skookum\".   The goal of this project is to produce a multi purpose monitoring system which is:   * Light weight. * Easy to install. * Easy to extend.",
+  "main": ".#syntaxconvert.js",
+  "authors": [
+    "Hiroyoshi Kurohara <kurohara@yk.rim.or.jp>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Scookum/scookum",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-resource": "^1.5.8",
+    "bootstrap": "^3.3.7",
+    "amcharts3": "^3.20.18"
+  }
+}

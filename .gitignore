@@ -2,3 +2,5 @@
 *#
 node_modules
 mongodata
+.DS_Store
+webui/public/components

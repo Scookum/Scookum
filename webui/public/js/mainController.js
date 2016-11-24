@@ -1,15 +1,37 @@
 //
-angular.module('main', []).controller('mainController', MainCtrl);
+angular.module('main', ['ngResource']).controller('mainController', MainCtrl);
 
-function MainCtrl($scope) {
+function MainCtrl($scope, $resource) {
   $scope.drawChart = drawChart;
   $scope.charts = ["activity", "heat"];
-  $scope.onChartSelect = onChartSelect;
-  $scope.chart = $scope.charts[0];;
+  $scope.hosts = ["localhost", "vm-pepper"];
+  $scope.chart = $scope.charts[0];
+  $scope.getHostNames = getHostNames;
+  $scope.getSourceNames = getSourceNames;
+  $scope.getChart = getChart;
+  $scope.resData = $resource('/api/data');
+  $scope.resHosts = $resource('/api/hosts');
+  $scope.resSources = $resource('/api/hosts/:host_id/sources');
+  $scope.resCharts = $resource('/api/hosts/:host_id/sources/:src_id');
 
-  function onChartSelect() {
-    //drawChart($scope);
+  function getHostNames() {
+    $scope.resData.get({}, function(data) {
+      console.log(data);
+    });
   }
+  function getSourceNames() {
+    $scope.resResources.get({host_id: $scope.chartHost}, function(data) {
+      
+    });
+  }
+  function getChart() {
+    $scope.resCharts.get({host_id: $scope.chartHost, src_id: $scope.chartSource}, function() {
+      
+    });
+  };
+  
+  getHostNames();
+  
   drawChart();
 }
 
