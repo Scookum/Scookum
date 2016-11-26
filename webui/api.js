@@ -11,14 +11,6 @@ route.get('/', function(req, res) {
 route.get('/login', function(req, res) {
 });
 
-route.get('/data', function(req, res) {
-  res.json({
-    charts: [
-      "activity", "heat"
-    ]
-  });
-});
-
 route.get('/hosts', function(req, res) {
   res.json({
     hosts:[
@@ -29,22 +21,33 @@ route.get('/hosts', function(req, res) {
 });
 
 route.get('/hosts/:host_id', function(req, res) {
-  
+  res.json({
+    sources: []
+  });
 });
 
 route.get('/hosts/:host_id/sources', function(req, res) {
+  // dummy data
+  res.json({
+    sources: [
+      "activity",
+      "heat",
+      "cpu",
+      "process"
+    ]
+  });
 });
 
 route.get('/hosts/:host_id/sources/:src_id', function(req, res) {
   var query = url.parse(req.url, true).query;
   var start = query.start;
   var end = query.end;
-});
 
-route.get('/hosts/:host_id/resources/:src_id/:start', function(req, res) {
-});
+  var dummyfile = "./chart_dummy/" + req.params.host_id + "_"
+      + req.params.src_id + ".js";
 
-route.get('/hosts/:host_id/resources/:src_id/:start', function(req, res) {
+  // dummy data
+  res.json(require(dummyfile));
 });
 
 route.get('/control', function(req, res) {

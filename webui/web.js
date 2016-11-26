@@ -1,3 +1,11 @@
+/**
+ * web.js
+ *
+ * Scookum web interface
+ * Main entry point.
+ * Copyright (C) 2016 Hiroyoshi Kurohara.
+ * 
+ */
 //
 
 var path = require('path');
@@ -19,12 +27,8 @@ function startServer(handler) {
   app.set('view engine', 'pug');
   app.use(require('stylus').middleware({ src: path.join(__dirname, 'public') }));
   
-  var api = require('./api');
-  api(app);
-
-  var pages = require('./pages');
-
-  pages(app);
+  require('./api')(app);
+  require('./pages')(app);
 
   var callback = handler;
   if (!callback) {
